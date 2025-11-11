@@ -1,0 +1,14 @@
+name: Publish documentation
+
+on:
+  repository_dispatch:
+    types: [publish-documentation]
+
+jobs:
+    publish-documentation:
+      permissions:
+        contents: write
+        pages: write
+        id-token: write
+      uses: nf-neuro/website/.github/workflows/deploy.yml@main
+      secrets: inherit
